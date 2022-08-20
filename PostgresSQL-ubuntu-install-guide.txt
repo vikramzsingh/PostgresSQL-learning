@@ -1,0 +1,64 @@
+Start PostgresSQL:-
+$ sudo systemctl start postgresql.service
+
+Start PostgressSQL automatically when system is turned on.
+$ sudo systemctl enable postgresql.service
+
+Restart PostgresSQL:-
+$ sudo systemctl restart postgresql
+
+######################################################
+Create New User:-
+To create a new user you need to access PostgresSQL main system by running following commands.
+$ sudo -i -u postgres or sudo su - postgres
+
+Then run command:
+$ psql
+At this point you are inside PostgresSQL. 
+
+Now Create new user by running command:
+$ CREATE USER Vikram WITH PASSWORD 'Vikram123';
+OUTPUT will be like this:-
+postgres=# CREATE USER Vikram WITH PASSWORD 'Vikram123';
+CREATE ROLE
+
+########################################################
+Create new Database:-
+We can create new Database by running following commands:-
+$ CREATE DATABASE testdemodb;
+OUTPUT:-
+postgres=# CREATE DATABASE testdemodb;
+CREATE DATABASE
+
+########################################################
+Grant all PRIVILEGES ON DATABASE newly created user
+$ GRANT ALL PRIVILEGES ON DATABASE testdemodb to Vikram;
+OUTPUT:-
+postgres=# GRANT ALL PRIVILEGES ON DATABASE testdemodb to Vikram;
+GRANT
+
+########################################################
+Create pgAdmin4 login and password:-
+$ sudo /usr/pgadmin4/bin/setup-web.sh
+Now you will be promoted to set email and password:-
+email:-vikram.singh@******r.com
+password:- Vikram123
+
+****impt:-
+Login into pgAdmin4 using:-
+username:- vikram
+password:- Vikram123
+
+###########################
+ALTER owner of databse:-
+$ ALTER DATABASE testdemodb OWNER TO vikram;
+
+#############################
+show all Database:-
+$ \l
+
+#############################
+Drop database:-
+$ DROP DATABASE testdemodb1;
+
+
