@@ -10,7 +10,7 @@ $ sudo systemctl restart postgresql
 ######################################################
 Create New User:-
 To create a new user you need to access PostgresSQL main system by running following commands.
-$ sudo -i -u postgres or sudo su - postgres
+$ sudo -u postgres psql or sudo -i -u postgres or sudo su - postgres
 
 Then run command:
 $ psql
