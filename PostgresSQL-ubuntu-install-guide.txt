@@ -38,6 +38,11 @@ postgres=# GRANT ALL PRIVILEGES ON DATABASE testdemodb to Vikram;
 GRANT
 
 ########################################################
+change password:=
+ALTER USER postgres WITH PASSWORD 'newpassword';
+
+
+########################################################
 Create pgAdmin4 login and password:-
 $ sudo /usr/pgadmin4/bin/setup-web.sh
 Now you will be promoted to set email and password:-
@@ -49,6 +54,10 @@ Login into pgAdmin4 using:-
 username:- vikram
 password:- Vikram123
 
+postgres password:=
+username:=postgres
+password:=Vikram123
+
 ###########################
 ALTER owner of databse:-
 $ ALTER DATABASE testdemodb OWNER TO vikram;
@@ -58,7 +67,29 @@ show all Database:-
 $ \l
 
 #############################
+show all tables:-
+$ \dt
+
+#############################
 Drop database:-
 $ DROP DATABASE testdemodb1;
 
+========================================================================================================================================================
+=====================================FROM DOUCMENTAION=============================
+
+Creating a New Table
+
+CREATE TABLE weather (
+ city varchar(80),
+ temp_lo int, -- low temperature
+ temp_hi int, -- high temperature
+ prcp real, -- precipitation
+ date date
+);
+Two dashes (“--”) introduce comments.
+
+CREATE TABLE cities (
+ name varchar(80),
+ location point
+);
 
